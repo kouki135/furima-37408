@@ -4,8 +4,7 @@ class ItemsController < ApplicationController
   def index
     
   end
-
-
+  
   private
 
   def basic_auth

@@ -6,7 +6,8 @@ class ItemsController < ApplicationController
   end
 
   def new
-    
+    authenticate_user!
+    @tweet = Item.new
   end
 
 

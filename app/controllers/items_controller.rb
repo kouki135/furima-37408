@@ -10,7 +10,7 @@ before_action :authenticate_user!, onry: [:new]
   end
 
   def create
-    
+    @item = Item.new
   end
 
 

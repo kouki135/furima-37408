@@ -6,7 +6,7 @@ class Item < ApplicationRecord
   validates :delivery_charge_side_id, numericality: { other_than: 1 , message: "can't be blank"}
   validates :delivery_source_area_id, numericality: { other_than: 1 , message: "can't be blank"}
   validates :delivery_days_id, numericality: { other_than: 1 , message: "can't be blank"}
-  validates :price, numericality: { in: 300..9999999}, format: /\d/
+  validates :price, presence: true, numericality: { greater_than_or_equal_to: 300, less_than_or_equal_to: 9999999}, format: /\d/
   validates :image, presence: true
 
   belongs_to :user

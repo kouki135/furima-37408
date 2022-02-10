@@ -24,6 +24,9 @@ class ItemsController < ApplicationController
 
   def edit
     @item = Item.find(params[:id])
+    #商品購入機能実装後に試す部分 if @item.order.present?
+    #   redirect_to action: :index
+    # end
     unless user_signed_in? && current_user.id == @item.user_id
       redirect_to action: :index
     end

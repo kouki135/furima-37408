@@ -7,10 +7,10 @@ class User < ApplicationRecord
   validates :birthday, presence: true
 
   has_many :items
-  
-  PASSWORD_REGEX = /\A(?=.*?[a-z])(?=.*?[\d])[a-z\d]+\z/i.freeze
-  validates_format_of :password, with: PASSWORD_REGEX
+  #商品購入機能実施時に実行 has_many :orders
 
+  PASSWORD_REGEX = /\A(?=.*?[a-z])(?=.*?\d)[a-z\d]+\z/i.freeze
+  validates_format_of :password, with: PASSWORD_REGEX
 
   # Include default devise modules. Others available are:
   # :confirmable, :lockable, :timeoutable, :trackable and :omniauthable

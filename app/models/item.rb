@@ -12,7 +12,7 @@ class Item < ApplicationRecord
 
   belongs_to :user
   has_one_attached :image
-  #商品購入機能実施時に実行 has_one :order
+  # 商品購入機能実施時に実行 has_one :order
   extend ActiveHash::Associations::ActiveRecordExtensions
   belongs_to :product_category, :product_condition, :delivery_charge_side, :delivery_source_area, :delivery_days
 end

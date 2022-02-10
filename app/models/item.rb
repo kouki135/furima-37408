@@ -11,6 +11,7 @@ class Item < ApplicationRecord
 
   belongs_to :user
   has_one_attached :image
+  has_one :order
   extend ActiveHash::Associations::ActiveRecordExtensions
   belongs_to :product_category, :product_condition, :delivery_charge_side, :delivery_source_area, :delivery_days
 end

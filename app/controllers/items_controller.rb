@@ -23,10 +23,7 @@ class ItemsController < ApplicationController
   end
 
   def edit
-    # 商品購入機能実装後に試す部分 if @item.order.present?
-    #   redirect_to action: :index
-    # end
-    redirect_to action: :index unless current_user.id == @item.user_id
+    redirect_to action: :index if @item.order.present? || current_user.id != @item.user_id
   end
 
   def update

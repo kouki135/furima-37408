@@ -1,7 +1,13 @@
 class OrdersController < ApplicationController
+  before_action :authenticate_user!, only: [:index]
+
   def index
     @item = Item.find(params[:item_id])
-    @order_address = OrderAddress.new
+    if @item.order.present? || current_user.id == @item.user_id
+      redirect_to root_path
+    else
+      @order_address = OrderAddress.new
+    end
   end
 
   def create

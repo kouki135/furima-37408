@@ -8,6 +8,7 @@ class OrderAddress
     validates :postcode, format: {with: /\A[0-9]{3}-[0-9]{4}\Z/, message: "is invalid. Enter it as follow(123-4567)"}
     validates :city
     validates :block
+    validates :token
   end
   
   validates :prefecture_id, numericality: { other_than: 1, message: "can't be blank" }

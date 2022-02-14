@@ -6,5 +6,6 @@ FactoryBot.define do
     block { "練馬1-1-1" }
     building { "練馬ビル" }
     phone_number { Faker::Number.leading_zero_number(digits: 11) }
+    token {"tok_abcdefghijk00000000000000000"}
   end
 end

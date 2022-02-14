@@ -1,6 +1,6 @@
-class DrderAddress
-  inclede ActiveModel::Model
-  attr_accesser :user_id, :item_id, :postcode, :prefecture_id, :city, :block, :building, :phone_number
+class OrderAddress
+  include ActiveModel::Model
+  attr_accessor :user_id, :item_id, :postcode, :prefecture_id, :city, :block, :building, :phone_number
 
   with_options presence: true do
     validates :user_id
@@ -11,7 +11,7 @@ class DrderAddress
   end
   
   validates :prefecture_id, numericality: { other_than: 1, message: "can't be blank" }
-  validates :phone_number, numericarity: {only_integer: true},format: /\A\d{10,11}\z/
+  validates :phone_number, numericality: { only_integer: true},format: /\A\d{10,11}\z/
 
   def save
     order = Order.create(user_id: user_id, item_id: item_id)

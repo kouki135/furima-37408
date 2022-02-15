@@ -25,7 +25,7 @@ RSpec.describe OrderAddress, type: :model do
         expect(@order_address.errors.full_messages).to include("Postcode can't be blank")
       end
       it 'postcodeは3桁ハイフン4桁の半角文字列でないと保存できない' do
-        @order_address.postcode = ''
+        @order_address.postcode = '1234567'
         @order_address.valid?
         expect(@order_address.errors.full_messages).to include('Postcode is invalid. Enter it as follow(123-4567)')
       end

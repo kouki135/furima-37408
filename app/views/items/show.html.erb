@@ -44,11 +44,11 @@
         </tr>
         <tr>
           <th class="detail-item">カテゴリー</th>
-          <td class="detail-value"><%= ProductCategory.find(@item.delivery_charge_side_id).name %></td>
+          <td class="detail-value"><%= ProductCategory.find(@item.product_category_id).name %></td>
         </tr>
         <tr>
           <th class="detail-item">商品の状態</th>
-          <td class="detail-value"><%= ProductCondition.find(@item.delivery_charge_side_id).name %></td>
+          <td class="detail-value"><%= ProductCondition.find(@item.product_condition_id).name %></td>
         </tr>
         <tr>
           <th class="detail-item">配送料の負担</th>
@@ -56,11 +56,11 @@
         </tr>
         <tr>
           <th class="detail-item">発送元の地域</th>
-          <td class="detail-value"><%= DeliverySourceArea.find(@item.delivery_charge_side_id).name %></td>
+          <td class="detail-value"><%= DeliverySourceArea.find(@item.delivery_source_area_id).name %></td>
         </tr>
         <tr>
           <th class="detail-item">発送日の目安</th>
-          <td class="detail-value"><%= DeliveryDays.find(@item.delivery_charge_side_id).name %></td>
+          <td class="detail-value"><%= DeliveryDays.find(@item.delivery_days_id).name %></td>
         </tr>
       </tbody>
     </table>
